@@ -33,5 +33,5 @@ function jourtravaille(date){
     }
     
 }
-date = "2023-12-25";
+date = "2023-07-14";
 console.log(jourtravaille(date));
