@@ -1,10 +1,12 @@
 <!-- 
         Mohamed HABBAAINA Le 16/01/2023
+        
 Créez une fonction fizzbuzz qui ne prend pas de paramètre. Dans cette fonction,
 affichez dans la console web les nombres de 1 à 151. Remplacez certains nombres par
 un mot selon les conditions suivantes :
+
 ● Si le nombre est un multiple de 3, affichez “Fizz”.
-● Si le nombre est un multiple de 5, affichez “Buzz”.
+● Si le nombre est un multiple de 5, affichez “Buzz”.  
 ● Si le nombre est un multiple de 3 et de 5, affichez “FizzBuzz”.
  -->
 <!DOCTYPE html>
