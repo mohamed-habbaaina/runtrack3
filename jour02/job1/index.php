@@ -20,7 +20,7 @@ La fonction de récupération et d’affichage doit se nommer “citation()”.
     <article id="citation">
         <p>La vie a beaucoup plus d’imagination que nous</p>
     </article>
-    <button id="button" onclick="recupArticle()">Clic</button>
+    <button id="button" onclick="citation()">Click</button>
 <script src="script.js"></script>
 </body>
 </html>
