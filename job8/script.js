@@ -23,9 +23,9 @@ function sommenombrespremiers(nmb1, nmb2){
     
     if(ver_nmb1 === true && ver_nmb2 === true){
         return (nmb1+nmb2);}
-    else {return"C'est pas des nombre premier";}
+    else {return"C'est pas des nombres premier";}
     
   
 }
 
-console.log(sommenombrespremiers(13,17));
+console.log(sommenombrespremiers(11,17));
