@@ -1,7 +1,7 @@
 
 const contnt = document.body;  // recupérer la variable dans textarea
 
-var refreshTimer;
+let refreshTimer;
 
 let konami = Array();  // tableau pour stoké les input"keyup"
 document.body.addEventListener('keyup', function(event) { // addEventListener quand "keyup"
@@ -22,42 +22,34 @@ document.body.addEventListener('keyup', function(event) { // addEventListener qu
     contnt.style.backgroundColor = 'white';
 
   }
+  console.log(compt);
+  console.log(konami);
+
+  if(compt >= 9){  
   
-  if(compt == 10){  
-  }
+      const codeKonami = [  //  le code konami
+        'ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'
+      ];  //  comparer entre les inputs et le code konani et compté le nombre de matsh
+      for(i=0; i<10; i++){
+        if(konami[i] == codeKonami[i]){
+            resultCompeur++;
+        }
+      if(resultCompeur == 10){
 
-  const codeKonami = [  //  le code konami
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "b",
-    "a"
-  ];  //  comparer entre les inputs et le code konani et compté le nombre de matsh
-  for(i=0; i<10; i++){
-    if(konami[i] == codeKonami[i]){
-        resultCompeur++;
-    }
-  if(resultCompeur == 10){
-    
-    result = true;
+        result = true;
+      }
+      }
+      if (result == true){
+            // changement de background color si le code Konami est bien rentrer
+            contnt.style.backgroundColor = '#0693e3';
+      
+      }
   }
-  }
-  if (result == true){
-        // changement de background color si le code Konami est bien rentrer
-        contnt.style.backgroundColor = 'red';
-
-  }
-
       // timer pour rafriche et réinitialiser le tableu et le compteur si 3 seconde
   refreshTimer = setTimeout(() => {
     konami = Array()
     resultCompeur = 0
-    // contnt.style.backgroundColor = 'white';
+    contnt.style.backgroundColor = 'white';
 
   }, 3000);
   
