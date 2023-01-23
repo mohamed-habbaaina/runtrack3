@@ -5,9 +5,29 @@ async function formAffich(event){
     await fetch('./pokemon.json')
     .then(async function(repons){
         
-        let data = await repons.json();
+        let _data = await repons.json();
 
-        console.log(data);
+        const data = Object.values(_data);
+
+        data.forEach(key =>
+            console.log((Object.values(key)))
+            
+            )
+
+
+             
+             
+
+
+        // for(const d in data){
+
+        //     let data_name = Object.entries(data[d]);
+        //     console.log(data_name[d]);
+            
+
+
+        //     // console.log(data[d][1]);    // data[d][0] id
+        // }
             
         // let affich = data[key];  // recupérer la data
         //     let p = document.querySelector('p');
