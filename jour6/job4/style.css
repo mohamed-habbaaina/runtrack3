@@ -1,0 +1,19 @@
+.nav-bar{
+    width: 100vw;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 80px;
+    list-style: none;
+}
+
+.berger{
+    cursor: pointer;
+}
+.berger div{
+    height: 3px;
+    width: 25px;
+    background-color: rgb(21, 13, 177);
+    margin: 5px;
+}
