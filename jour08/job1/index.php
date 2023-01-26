@@ -8,11 +8,11 @@
 
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-orange-300">
-    <header>
+<body>
+    <header class="bg-orange-300">
         <nav>
             <ul>
-                <li><a href="#" class="px-4">Accueil</a></li>
+                <li><a href="#">Accueil</a></li>
                 <li><a href="#">Inscription</a></li>
                 <li><a href="#">Connexion</a></li>
                 <li><a href="#">Rechercher</a></li>
