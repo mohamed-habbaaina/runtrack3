@@ -80,10 +80,10 @@
         <nav id="main-nav" class=" w-full flex justify-center items-center  font-poppins">
 
             <ul id="toggled-menu" class="w-full bg-orange-700 text-gray-800 border-b border-gray-200 flex flex-col items-center ">
-                <li class="py-4 "><a class="text-sm uppercase font-semibold pl-6 hover:text-red-700" href="#Acceuil">Accueil</a></li>
-                <li class="py-4 "><a class="text-sm uppercase font-semibold pl-6 hover:text-red-700" href="#">Inscription</a></li>
-                <li class="py-4 "><a class="text-sm uppercase font-semibold pl-6 hover:text-red-700" href="#">Connexion</a></li>
-                <li class="py-4 "><a class="text-sm uppercase font-semibold pl-6 hover:text-red-700" href="#">Rechercher</a></li>
+                <li class="py-4 "><a class="text-sm text-white uppercase font-semibold pl-6 hover:text-black" href="#Acceuil">Accueil</a></li>
+                <li class="py-4 "><a class="text-sm text-white uppercase font-semibold pl-6 hover:text-black" href="#">Inscription</a></li>
+                <li class="py-4 "><a class="text-sm text-white uppercase font-semibold pl-6 hover:text-black" href="#">Connexion</a></li>
+                <li class="py-4 "><a class="text-sm text-white uppercase font-semibold pl-6 hover:text-black" href="#">Rechercher</a></li>
             </ul>
         </nav>
     </footer>
