@@ -1,43 +1,45 @@
-async function formAffich(event){
+async function formAffich(){
     
-    let key = event.currentTarget.value;    // recupérée la clés
+    // let key = event.currentTarget.value;    // recupérée la clés
 
     await fetch('./pokemon.json')
+    //  La promis
     .then(async function(repons){
         
         let _data = await repons.json();
 
+        // Récupération de la data
         const data = Object.values(_data);
-
-        data.forEach(key =>
-            console.log((Object.values(key)))
+        
+        // Vérifier que l'utilisateur a bien rempli l'ID ou le nom
+        if(nom.value || id.value){
             
-            )
+            data.forEach(e=>{
 
+                //  comparer entre les inputs et la data
+                if(e.name.french === nom.value || e.id == id.value){
 
-             
-             
+                    nomPoki.innerText = 'Le Nom: ' + e.name.french;
+                    typePoki1.innerText = 'Le Type: ' + e.type[0];
+                    if (e.type[1]){ typePoki2.innerText = 'est: '+ e.type[1];}
+        
+                   } else {
+                    // nomPoki.innerText = "L'Id ou le Nom ne correspond à aucun Pokémon !";
+                   }
 
-
-        // for(const d in data){
-
-        //     let data_name = Object.entries(data[d]);
-        //     console.log(data_name[d]);
-            
-
-
-        //     // console.log(data[d][1]);    // data[d][0] id
-        // }
-            
-        // let affich = data[key];  // recupérer la data
-        //     let p = document.querySelector('p');
-        //         p.textContent = affich;  //  l'affichage
+            })
+            }
                 
     })
-}
-const id = document.body.querySelector('#id');
-const nom = document.body.querySelector('#nom');
-const type = document.body.querySelector('#type');
-const button = document.body.querySelector('button');
+}   
+        //  cibler les éléments.
+    const id = document.body.querySelector('#id');
+    const nom = document.body.querySelector('#nom');
+    const button = document.body.querySelector('button');
 
-button.addEventListener('click', formAffich);
+    const nomPoki = document.body.querySelector("#nomPoki");
+    const typePoki1 = document.body.querySelector("#typePoki1");
+    const typePoki2 = document.body.querySelector("#typePoki2");
+
+        //  Le addEventListener
+    button.addEventListener('click', formAffich);
