@@ -28,13 +28,15 @@ page HTML.
         <label for="nom">Nom</label>
         <input type="text" id="nom" name="nom" placeholder="Nom">
 
-        <label for="type">Type</label>
-        <select name="type" id="type">
-            <option value="type"></option>
-        </select>
-
         <button type="button">Filtrer</button>
     </form>
+
+    <div>
+        <p id="nomPoki"></p>
+        <p id="typePoki1"></p>
+        <p id="typePoki2"></p>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
