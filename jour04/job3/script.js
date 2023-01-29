@@ -17,11 +17,12 @@ async function formAffich(){
             data.forEach(e=>{
 
                 //  comparer entre les inputs et la data
+                // e.name.french le Nom dans le fichier json, nom.valus le nom input, e.id c'est id dans le fichier json, id.value c'est id input 
                 if(e.name.french === nom.value || e.id == id.value){
 
-                    nomPoki.innerText = 'Le Nom: ' + e.name.french;
-                    typePoki1.innerText = 'Le Type: ' + e.type[0];
-                    if (e.type[1]){ typePoki2.innerText = 'est: '+ e.type[1];}
+                    nomPoki.innerText = 'Le Nom: ' + e.name.french; // l'affichage de nom
+                    typePoki1.innerText = 'Le Type: ' + e.type[0]; // l'affichage de type, letype et un Arry alors on utilise les crochets eg: pour la clès "0" e.type[0]
+                    if (e.type[1]){ typePoki2.innerText = 'est: '+ e.type[1];}  // si le tableau type contien plu d'une données, on affiche la deauxième.
         
                    } else {
                     // nomPoki.innerText = "L'Id ou le Nom ne correspond à aucun Pokémon !";
