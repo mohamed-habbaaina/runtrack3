@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,7 +11,9 @@
 <body>
     <?php require_once('./includes/header.php') ?>
     <?php
-        if(isset($_SESSION['login'])): echo 'Bonjour'.  $_SESSION['login'];
+    if (isset($_SESSION['nom'])):
+            echo $_SESSION['register'] . '<br>';
+            echo 'Bonjour '. $_SESSION['prenom'] . ' ' .  $_SESSION['nom'];
         else: echo 'Bonjour';
         endif; ?>
     <script src="./includes/script.js"></script>

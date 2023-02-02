@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['email'])):
 
     //  securiser les inputs
@@ -26,10 +27,15 @@ if (isset($_POST['email'])):
         $data->execute(["$email"]);
         $fetch_ass = $data->fetchAll(PDO::FETCH_ASSOC);
 
-        // si le tableau est vide inser l'user dans la base de données
+        // si le tableau est vide inser user dans la base de données
         if(empty($fetch_ass)):
         $req = $db->prepare("INSERT INTO `utilisateurs`(`nom`, `prenom`, `email`, `password`) VALUES (:nom, :prenom, :email, :password);");
         $req->execute([":nom" => "$nom", ":prenom" => "$prenom", ":email" => "$email", ":password" => "$password"]);
+
+        // création des variables de SESSION et redirection
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            header("location: index.php");  // la redirection ne fonction pas sans rafrichir la page
         endif;
     endif;
 
