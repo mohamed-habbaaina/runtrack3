@@ -2,6 +2,8 @@
 
 //  récupérer la data pour l'inscription des users
 const form = document.querySelector('#form-register');
+
+// ********* Validation Email *********
 let email = document.querySelector('#email');
     email.addEventListener('change', function(){
 
@@ -24,7 +26,58 @@ let email = document.querySelector('#email');
         small.innerHTML = 'Adresse Email Pas Valide (Carectère Valide: A-Z 0-9 _.-)';
         small.style.color = 'red';
         return false;
-    }    })
+    }
+})
+
+// ********* Validation Password *********
+let password = document.querySelector('#password');
+    password.addEventListener('change', function(){
+
+    let msg;
+    let valid = false;
+
+    console.log(password.value);
+
+
+    // verifier que Password contien minimum 4 caracteres;
+    if(password.value.length < 4){
+        msg = 'Password trop cours Minimum 4 caracteres !';
+    }
+
+    //  Au moins une maj
+    else if (!/[A-Z]/.test(password.value)){
+        msg = 'Le Password dois contenir au moins une Majuscule !';
+    }
+
+    //  Au moins une min
+    else if (!/[a-z]/.test(password.value)){
+        msg = 'Le Password dois contenir au moins une Miniscule !';
+    }
+
+    //  Au moins un chiffre
+    else if (!/[0-9]/.test(password.value)){
+        msg = 'Le Password dois contenir au moins un Chiffre !';
+    }
+
+    else{
+        msg = 'Le Password est Valide';
+        valid = true;
+    }
+    
+    // L'Affichage de la validation de Password.
+    let smallPass = password.nextElementSibling;
+
+    if(valid){
+        smallPass.innerHTML = 'Password Valide';
+        smallPass.style.color = 'green';
+        return true;
+    } else{
+        smallPass.innerHTML = msg;
+        smallPass.style.color = 'red';
+        return false;
+    }    
+})
+
 
 form.addEventListener('submit', async function(e){
     e.preventDefault(); // empécher le traitement par defaut
