@@ -36,9 +36,6 @@ let password = document.querySelector('#password');
     let msg;
     let valid = false;
 
-    console.log(password.value);
-
-
     // verifier que Password contien minimum 4 caracteres;
     if(password.value.length < 4){
         msg = 'Password trop cours Minimum 4 caracteres !';
@@ -78,28 +75,30 @@ let password = document.querySelector('#password');
     }    
 })
 
+// ********* Validation Confermation Password *********
+let repass = document.querySelector('#repass');
+    repass.addEventListener('change', function(){
+   
+    // L'Affichage de la validation de Confermation Password.
+    let smallRePass = repass.nextElementSibling;
 
+    if(repass.value == password.value){
+        smallRePass.innerHTML = 'Confermation Password Valide';
+        smallRePass.style.color = 'green';
+        return true;
+    } else{
+        smallRePass.innerHTML = 'Entrer le meme Password !';
+        smallRePass.style.color = 'red';
+        return false;
+    }
+})
+
+// *********   La partie Fetch est creation User ********
 form.addEventListener('submit', async function(e){
     e.preventDefault(); // empécher le traitement par defaut
     
     const payload = new FormData(this); // création d'un objet Form 
    
-    // // récupération des input
-    // let nom = payload.get('nom');
-    // let prenom = payload.get('prenom');
-    // let email = payload.get('email');
-    // let password = payload.get('password');
-    // let repass = payload.get('repass');
-    
-    // // console.log(nom+'\n'+prenom+'\n'+email+'\n'+password+'\n'+repass);
-    // payload.email.addEventListener('change', function(){
-    //     console.log('ok');
-    // })
-
-
-
-
-
         // récupérer les inputs avec la méthode Fetch
         await fetch("inscription.php", {
             method: 'post',
@@ -111,10 +110,8 @@ form.addEventListener('submit', async function(e){
             //  Affichage de message si user est crée.
             if(response.status == 201){
                 alert(response.statusText);
+                form.submit();  // submit le formulaire.
             }
             return response.text();
         })
-        // .then((payload)=>{
-        //     console.log(payload.get('nom'));
-        // })
-    })
+})
