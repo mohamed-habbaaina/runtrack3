@@ -28,20 +28,20 @@ if (isset($_POST['email'])):
         $fetch_ass = $data->fetchAll(PDO::FETCH_ASSOC);
 
         // si le tableau est vide inser user dans la base de données
-        if(empty($fetch_ass)):
-        $req = $db->prepare("INSERT INTO `utilisateurs`(`nom`, `prenom`, `email`, `password`) VALUES (:nom, :prenom, :email, :password);");
-        $regist = $req->execute([":nom" => "$nom", ":prenom" => "$prenom", ":email" => "$email", ":password" => "$password"]);
+        // if(empty($fetch_ass)):
+        // $req = $db->prepare("INSERT INTO `utilisateurs`(`nom`, `prenom`, `email`, `password`) VALUES (:nom, :prenom, :email, :password);");
+        // $regist = $req->execute([":nom" => "$nom", ":prenom" => "$prenom", ":email" => "$email", ":password" => "$password"]);
         
         // Affichage de message register
-        if($regist):
+        // if($regist):
             //  changement status HTTP de 200 a 201
             header("HTTP/1.1 201 Votre compte a bien été crée");
-            endif;
+            // endif;
 
         // création des variables de SESSION et redirection
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
-        endif;
+        // endif;
     endif;
 
 endif; ?>
@@ -58,22 +58,39 @@ endif; ?>
     
     <main>
         <form action="inscription.php" method="post" id="form-register">
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" placeholder="Votre Nom">
+            
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre Nom">
+            </div>
 
-            <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" id="prenom" placeholder="Votre Prénom">
+            <div>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre Prénom">
+            </div>
 
-            <label for="email">email</label>
-            <input type="email" name="email" id="email" placeholder="Votre Email">
+            <div>
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" placeholder="Votre Email">
+                <small></small>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Votre Password">
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Votre Password">
+                <small></small>
+            </div>
 
-            <label for="repass">Confermer Votre Password</label>
-            <input type="password" name="repass" id="repass" placeholder="Confermer Votre Password">
+            <div>
+                <label for="repass">Confermer Votre Password</label>
+                <input type="password" name="repass" id="repass" placeholder="Confermer Votre Password">
+                <small></small>
+            </div>
 
-            <button type="submit" id="btn-register">S'Iscrire</button>
+            <div>
+                <button type="submit" id="btn-register">S'Iscrire</button>
+            </div>
+
         </form>
     </main>
     <script src="./script.js"></script>
