@@ -1,33 +1,20 @@
-// let register = document.querySelector('#btn-register');
-// let formContainer = document.querySelector('#form-register')
 
-// register.addEventListener("click", async function(){
-    
-//     await fetch("inscription.php")
-    
-//     .then((rpns) =>{
-//         if(rpns.ok){
 
-//             return rpns.text();
-//         }
-//     })
-
-//     .then((html) =>{
-//         formContainer.innerHTML = html;
-//         console.log(formContainer);
-//     })
-// })
+//  récupérer la data pour l'inscription des users
 const form = document.querySelector('#form-register');
 
     form.addEventListener('submit', async function(e){
-        e.preventDefault();
+        e.preventDefault(); // empécher le traitement par defaut
 
-        const payload = new FormData(form);
-        // console.log([...payload])
+        const payload = new FormData(this); // création d'un objet Form 
 
-
-        fetch("inscription.php", {method: 'post', body: payload})
+        fetch("inscription.php", {method: 'post', body: payload})   // récupérer les inputs avec la méthode Fetch
         
-        .then(rpns => rpns.text())
-        .then(data => console.log(data))
+        .then((response) =>{
+
+            //  Affichage de message si user est crée.
+            if(response.status == 201){
+                alert(response.statusText);
+            }
+        })
     })

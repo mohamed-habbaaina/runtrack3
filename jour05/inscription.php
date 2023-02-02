@@ -30,12 +30,17 @@ if (isset($_POST['email'])):
         // si le tableau est vide inser user dans la base de données
         if(empty($fetch_ass)):
         $req = $db->prepare("INSERT INTO `utilisateurs`(`nom`, `prenom`, `email`, `password`) VALUES (:nom, :prenom, :email, :password);");
-        $req->execute([":nom" => "$nom", ":prenom" => "$prenom", ":email" => "$email", ":password" => "$password"]);
+        $regist = $req->execute([":nom" => "$nom", ":prenom" => "$prenom", ":email" => "$email", ":password" => "$password"]);
+        
+        // Affichage de message register
+        if($regist):
+            //  changement status HTTP de 200 a 201
+            header("HTTP/1.1 201 Votre compte a bien été crée");
+            endif;
 
         // création des variables de SESSION et redirection
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
-            header("location: index.php");  // la redirection ne fonction pas sans rafrichir la page
         endif;
     endif;
 

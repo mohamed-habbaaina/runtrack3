@@ -12,7 +12,6 @@ session_start();?>
     <?php require_once('./includes/header.php') ?>
     <?php
     if (isset($_SESSION['nom'])):
-            echo $_SESSION['register'] . '<br>';
             echo 'Bonjour '. $_SESSION['prenom'] . ' ' .  $_SESSION['nom'];
         else: echo 'Bonjour';
         endif; ?>
