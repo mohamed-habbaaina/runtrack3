@@ -11,11 +11,13 @@ session_start();?>
 </head>
 <body>
     <?php require_once('./includes/header.php') ?>
+<main>
     <?php
     if (isset($_SESSION['nom'])):
             echo 'Bonjour '. $_SESSION['prenom'] . ' ' .  $_SESSION['nom'];
         else: echo 'Bonjour';
         endif; ?>
+</main>
     <script src="./includes/script.js"></script>
 </body>
 </html>

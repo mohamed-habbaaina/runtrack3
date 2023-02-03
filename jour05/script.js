@@ -1,5 +1,3 @@
-
-
 //  récupérer la data pour l'inscription des users
 const form = document.querySelector('#form-register');
 

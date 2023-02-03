@@ -71,7 +71,7 @@ endif; ?>
             </div>
 
             <div>
-                <label for="email">email</label>
+                <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Votre Email">
                 <small></small>
             </div>
